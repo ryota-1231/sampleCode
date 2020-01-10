@@ -1,3 +1,36 @@
-// Place all the styles related to the Messages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.top-wrapper{
+  display: flex;
+  .side-ber{
+    background-color: rgb(199, 13, 231);
+    display: flex;
+    .side-ber__left{
+      height: 100%;
+      width: 50px;
+    }
+    .side-ber__right{
+      height: 100%;
+      widows: 100px;
+    }
+  }
+    
+  .main-cotainer{
+    background-color: rgb(204, 202, 202);
+    width: calc(100% - 150px);
+    .container__header{
+      background-color: red;
+      height: 50px;
+    }
+    .container__contents{
+      background-color: blue;
+      height: calc(100% - 100px);
+    }
+    .container__bottom{
+      background-color: green;
+      height: 50px;
+    }
+  }
+    
+
+
+}
+  

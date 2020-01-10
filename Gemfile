@@ -52,3 +52,32 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# gem 'devise'
+# gem 'ancestry'
+# gem 'recaptcha', require: "recaptcha/rails"
+# gem 'jquery-rails'
+# gem 'carrierwave'
+# gem 'mini_magick'
+# gem 'fog-aws'
+gem 'haml-rails'
+gem "erb2haml"
+# gem "font-awesome-rails"
+# gem 'active_hash'
+# gem 'dropzonejs-rails'
+# gem 'mechanize'
+# gem 'ancestry'
+# gem "gretel"
+# gem 'factory_bot_rails'
+# gem 'faker'
+# gem 'pry-rails'
+# gem 'rspec-rails'
+# gem 'payjp'
+# gem 'omniauth'
+# gem 'omniauth-google-oauth2'
+# gem 'omniauth-facebook'
+# gem 'dotenv-rails'
+# gem 'kaminari'
+# gem 'ransack'
+# gem 'bullet'
+# gem 'aws-sdk-s3'
