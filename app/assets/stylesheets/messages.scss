@@ -11,8 +11,21 @@
       width: 70px;
     }
     .side-ber__right{
-      height: 100%;
-      width: 210px;
+      &__container{
+        height: 100%;
+        width: 210px;
+      .title-area{
+        &__top{
+          &__left{
+            font-size: 25px;
+            color: #fff;
+          }
+        }
+      }
+      .conversation-area{
+
+      }
+      }
     }
   }
     
