@@ -1,6 +1,13 @@
 .top-wrapper
   .side-ber
     .side-ber__left
+      .button__area
+        .button__area__top
+          %button.btn__channel
+          %button.btn__channel
+        .button__area__bottom
+          %button.btn__channel__add
+            %p +
     .side-ber__right
       .side-ber__right__container
         .title-area
@@ -69,38 +76,39 @@
         
   .main-cotainer
     .container__header
+      .container__header__wrapper
+        .container__header__left
+          .container__header__left__top
+            .container__title
+              %h3 #あいさつ部屋
+          .container__header__left__bottom
+            .container__star
+              %i.fa.fa-star
+            .container__user-num
+              %i.fa.fa-user
+              %h4 123
+            .container__pinned
+              %i.fa.fa-map-pin
+              %h4 1
+            .container__topic
+              %i.fa.fa-pencil
+              %h4 トピックを追加
+        .container__header__right
+          .container__header__icon
+            .icon__left
+              %i.fa.fa-phone.icon
+              %i.fa.fa-info-circle.icon
+              %i.fa.fa-cog.icon
+            %input{placeholder: "検索"}
+            %i.fa.fa-search.search-icon
+            .icon__right
+              %i.fa.fa-at.icon
+              %i.fa.fa-star.icon
+              %i.fa.fa-ellipsis-v.icon
+            
     .container__contents
-      
-      っっっっ
-
-
-
-      っっっっ
-
-
-
-      っっっっ
-
-
-
-
-
-      っっっっ
-
-
-
-
-
-      っっっっ
-
-
-
-
-
-      っっっっ
-
-
-
-      zっっっっ
 
     .container__bottom
+      %input{placeholder: "#あいさつ部屋へのメッセージ"}
+      %button.submit
+        送信
