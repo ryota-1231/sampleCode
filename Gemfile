@@ -53,7 +53,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# gem 'devise'
+gem 'devise'
 # gem 'ancestry'
 # gem 'recaptcha', require: "recaptcha/rails"
 # gem 'jquery-rails'
@@ -70,7 +70,7 @@ gem "font-awesome-rails"
 # gem "gretel"
 # gem 'factory_bot_rails'
 # gem 'faker'
-# gem 'pry-rails'
+gem 'pry-rails'
 # gem 'rspec-rails'
 # gem 'payjp'
 # gem 'omniauth'
@@ -81,3 +81,5 @@ gem "font-awesome-rails"
 # gem 'ransack'
 # gem 'bullet'
 # gem 'aws-sdk-s3'
+gem 'rails-i18n', '~> 6.0'
+gem 'devise-i18n'

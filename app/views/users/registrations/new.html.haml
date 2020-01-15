@@ -1,0 +1,26 @@
+.sign-up__wrapper
+  .header
+    .header__left
+      =link_to "", "/messages"
+  .main-contaner
+    .contaner__table
+      %h2 新規登録する
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .field
+          %br/
+          = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "ニックネーム"
+        .field
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス： example@slack.com"
+        .field
+          - if @minimum_password_length
+            %em
+          %br/
+          = f.password_field :password, autocomplete: "new-password",placeholder: "パスワード (#{@minimum_password_length} 文字以上)"
+        .field
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード （確認）"
+        .actions
+          = f.submit "登録"
+      = render "users/shared/links"
