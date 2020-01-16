@@ -1,6 +1,7 @@
 .top-wrapper{
   height: 100%;
   display: flex;
+  position: relative;
   .side-ber{
     background-color: rgb(75, 0, 88);
     display: flex;
@@ -344,5 +345,19 @@
     
 
 
+}
+.user-popup-wrapper{
+  background-color: #fff;
+  height: 770px;
+  width: 300px;
+  padding: 12px 0;
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  .user-name-area{
+    padding: 8px 24px 12px;
+  }
 }
   
