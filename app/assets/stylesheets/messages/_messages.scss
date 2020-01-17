@@ -87,6 +87,9 @@
               }
             }
           }
+          &:hover{
+            cursor: pointer;
+          }
         }
         .conversation-area{
           margin-top: 15px;
@@ -348,7 +351,6 @@
 }
 .user-popup-wrapper{
   background-color: #fff;
-  height: 770px;
   width: 300px;
   padding: 12px 0;
   position: absolute;
@@ -356,8 +358,107 @@
   left: 8px;
   border-radius: 8px;
   border: 1px solid #ddd;
-  .user-name-area{
-    padding: 8px 24px 12px;
+  display: none;
+  .btn{
+    width: 298px;
+    height: 30px;
+    padding: 0 24px;
+    border: none;
+    font-size: 14px;
+    text-align: left;
+    font-family: 'system-ui';
+    &:hover{
+      background-color: #1164A3;
+      color: #fff;
+      cursor: pointer;
+    }
   }
+  .user-popup-top{
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
+    .user-name-area{
+      padding: 8px 24px 12px;
+      display: flex;
+      .user-avatar{
+        height: 36px;
+        width: 36px;
+        margin-right: 12px;
+        background-color: rgb(0, 183, 255);
+        border-radius: 2px;
+      }
+      .user-name{
+        font-weight: 900;
+        font-size: 15px;
+      }
+    }
+  }
+  .user-popup-channel{
+    border-bottom: 1px solid #ddd;
+    .user-active-channel{
+      margin-top: 8px;
+      padding: 8px 24px 12px;
+      display: flex;
+      .active-channel-avatar{
+        height: 36px;
+        width: 36px;
+        margin-right: 12px;
+        background-color: rgb(0, 183, 255);
+        border-radius: 2px;
+      }
+      .active-channel-name{
+        .active-channel-main-name{
+          font-weight: 900;
+        }
+        .active-channel-email{
+          color: rgba(var(--sk_foreground_max,29,28,29),.7);
+        }
+      }
+    }
+    .user-channel-update{
+      height: 110px;
+      width: 284px;
+      padding: 0 24px;
+      margin: 0 16px 8px 0;
+      font-size: 15px;
+      a{
+        display: block;
+        color: rgba(var(--sk_highlight,18,100,163),1);
+        text-decoration: none;
+        font-weight: 700;
+        &:hover{
+          text-decoration : underline;
+        }
+      }
+    }
+    .user-channel-message-limit{
+      height: 84px;
+    }
+  }
+  .user-popup-custom{
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  .user-popup-workspace{
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  .user-popup-log-out{
+    padding: 8px 0 0;
+    a{
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.8);
+      display: block;
+      text-decoration: none;
+      padding: 0 24px;
+      height: 30px;
+      line-height: 30px;
+      &:hover{
+        background-color: #1164A3;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+  }
+
 }
   
