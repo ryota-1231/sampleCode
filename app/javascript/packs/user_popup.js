@@ -1,6 +1,5 @@
 $(function(){
   $('.title-area').click(function(){
-    console.log('hoge');
+    $('.user-popup-wrapper').css('display', 'block');
   })
-
 })

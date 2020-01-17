@@ -1,3 +1,60 @@
 .user-popup-wrapper
-  .user-name-area
-    =current_user.nickname
+  .user-popup-top
+    .user-name-area
+      .user-avatar
+      .user-name
+        =current_user.nickname
+    .user-status
+      %button.btn.status-btn
+        ステータスを設定
+    .user-profile
+      %button.btn.profile-btn
+        プロフィール＆アカウント
+    .user-environmental-setting
+      %button.btn.environmental-setting-btn
+        環境設定
+    .user-state-change
+      %button.btn.state-change-btn
+        ログイン状態を
+        %span 離席中
+        に変更
+    .user-help
+      %button.btn.help-btn
+        ヘルプ＆フィードバック
+  .user-popup-channel
+    .user-active-channel
+      .active-channel-avatar
+      .active-channel-name
+        .active-channel-main-name
+          miracleave
+        .active-channel-email
+          miracleave@exampli.com
+    .user-channel-update
+      あなたのワークスペースでは現在Slackのフリープランを利用しています。
+      =link_to "アップグレードのオプションを表示する", ""
+    .user-channel-message-limit
+      %button.btn.limit-btn
+        メッセージの合計
+  .user-popup-custom
+    .user-member-invitation
+      %button.btn.member-invitation-btn
+        メンバーを招待
+    .user-analytics
+      %button.btn.analytics-btn
+        アナリティクス
+    .user-custom
+      %button.btn.custom-btn
+        環境設定
+    .user-sign-out
+      %button.btn.sign-out-btn
+        %span miracleave
+        からサインアウトする
+  .user-popup-workspace
+    .user-workspace-change
+      %button.btn.workspace-change-btn
+        ワークスペースを切り替える
+    .user-workspace-sign-in
+      %button.btn.workspace-sign-in-btn
+        他のワークスペースにサインインする
+  .user-popup-log-out
+    = link_to "Slackからログアウトする", destroy_user_session_path, method: :delete
