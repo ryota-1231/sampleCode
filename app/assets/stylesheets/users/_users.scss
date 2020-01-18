@@ -1,4 +1,4 @@
-.sign-up__wrapper{
+.sign-up__wrapper, .login__wrapper{
   background-color: #f8f8f8;
   height: 100vh;
   .header{
@@ -77,6 +77,24 @@
           border-radius: 4px;
           background-color: #007a5a;
           ;
+        }
+      }
+      .forgot-pass{
+        a{
+          display: block;
+          color: #0061cf;
+          text-align: center;
+        }
+      }
+      .field-set{
+        display: flex;
+        #user_remember_me{
+          display: inline-block;
+          width: 48px;
+        }
+        label{
+          height: 48px;
+          line-height: 48px;
         }
       }
     }
