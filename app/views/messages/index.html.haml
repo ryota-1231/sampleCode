@@ -71,9 +71,6 @@
             %h3 + Google Driveをインストールする
             %h3 + アプリを追加する
 
-
-
-        
   .main-cotainer
     .container__header
       .container__header__wrapper
@@ -107,10 +104,11 @@
               %i.fa.fa-ellipsis-v.icon
             
     .container__contents
-
+      - @messages.each do|message|
+        = message.message
     .container__bottom
-      %input{placeholder: "#あいさつ部屋へのメッセージ"}
-      %button.submit
-        送信
+      = form_with url: messages_path, id: :messages, local: true do |form|
+        = form.text_field :message
+        = form.submit class: :submit, value: :"送信"
 = render 'user_popup'
 = javascript_pack_tag 'user_popup'
