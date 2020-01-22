@@ -5,12 +5,8 @@ class MessagesController < ApplicationController
     @messages = Message.all
   end
 
-  def delete
-    render "users/sign-in"
-  end
-
   def new
-    binding.pry
+
   end
 
   def create
@@ -25,7 +21,9 @@ class MessagesController < ApplicationController
     end
   end
   
-
+  def delete
+    render "users/sign-in"
+  end
 
   private
 
