@@ -110,5 +110,9 @@
       = form_with url: messages_path, id: :messages, local: true do |form|
         = form.text_field :message
         = form.submit class: :submit, value: :"送信"
+
+
+
+
 = render 'user_popup'
 = javascript_pack_tag 'user_popup'
