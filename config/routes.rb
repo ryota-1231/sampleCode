@@ -3,11 +3,8 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { registrations: "users/registrations",sessions: "users/sessions" }
 
-  root "messages#index"
-
-  resources "messages" do
-  end
-
-  
+  root 'rooms#index'
+  # 次の一行を追加
+  resources :messages, only: :create
 
 end
