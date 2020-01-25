@@ -104,9 +104,10 @@
               %i.fa.fa-ellipsis-v.icon
             
     .container__contents
-      - @messages.each do|message|
-        .content__message
-          = message.message
+      = render @messages
+      -# - @messages.each do|message|
+      -#   .content__message
+      -#     = message.message
     .container__bottom
       = form_with url: messages_path, id: :messages, local: true do |form|
         = form.text_field :message
