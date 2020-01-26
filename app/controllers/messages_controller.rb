@@ -1,21 +1,13 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!
 
- 
-
   def new
 
   end
 
   def create
-    @messages = Message.new(message_params)
-    if @messages.save
-      redirect_to action: 'index'
-      return
-    else
-      redirect_to action: 'index' 
-      return
-    end
+    @message = current_user.messages.create!(message_params)
+    ActionCable.server.broadcast 'room_channel', message: @message.template
   end
   
   def delete
@@ -23,9 +15,8 @@ class MessagesController < ApplicationController
   end
 
   private
-
   def message_params
-    params.permit(:message)
+    params.require(:message).permit(:message)
   end
 
 end

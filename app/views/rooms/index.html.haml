@@ -103,15 +103,16 @@
               %i.fa.fa-star.icon
               %i.fa.fa-ellipsis-v.icon
             
-    .container__contents
+    #container__contents
       = render @messages
       -# - @messages.each do|message|
       -#   .content__message
       -#     = message.message
-    .container__bottom
-      = form_with url: messages_path, id: :messages, local: true do |form|
-        = form.text_field :message
-        = form.submit class: :submit, value: :"送信"
+    = render 'footer'
+    -# .container__bottom
+    -#   = form_with model: @message do |f|
+    -#     = f.text_field :message
+    -#     = f.submit '送信', class: 'btn btn-primary btn-block submit disabled', id: 'message-button'
 
 = render 'user_popup'
 = javascript_pack_tag 'user_popup'

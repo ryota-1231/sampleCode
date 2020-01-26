@@ -1,5 +1,14 @@
 .message{:id => "message-#{message.id}"}
-  %p
-    = message.user.email
-    \: #{l message.created_at, format: '%Y年%-m月%-d日(%a) %H:%M'}
-  = simple_format(h message.message)
+  .message-user-avatar
+    .button__area
+      .button__area__top
+        %button.btn__channel
+  .message-main-content
+    .message-user-name
+      .user-nickname
+        = message.user.nickname
+        %span.user-time 
+          = message.created_at.strftime('%H:%M') 
+    .message-user-content
+      = simple_format(h message.message)
+= javascript_pack_tag 'content'
