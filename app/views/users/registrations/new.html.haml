@@ -21,6 +21,9 @@
         .field
           %br/
           = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード （確認）"
+        .field
+          %br/
+          = f.file_field :avatar, autofocus: true, autocomplete: "nickname", placeholder: "ニックネーム"
         .actions
           = f.submit "登録"
       = render "users/shared/links"
