@@ -1,5 +1,6 @@
 class RoomsController < ApplicationController
-  
+  before_action :authenticate_user!
+
   def index
     @messages = Message.includes(:user).order(:id).last(100)
     @message = current_user.messages.build
@@ -10,6 +11,10 @@ class RoomsController < ApplicationController
     @messages = Message.includes(:user).order(:id)
     # メッセージ投稿に利用
     @message = current_user.messages.build
+  end
+
+  def delete
+    render "users/sign-in"
   end
 
   def show_additionally
