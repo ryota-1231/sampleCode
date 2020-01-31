@@ -6,4 +6,8 @@ class User < ApplicationRecord
          
   has_one_attached :avatar  
   has_many :messages, dependent: :destroy
+
+  def thumbnail
+    return self.avatar.variant(resize: '50x50')
+  end
 end
