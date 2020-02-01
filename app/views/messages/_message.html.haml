@@ -4,7 +4,8 @@
       .button__area__top
         - if message.user.avatar.present?
           = image_tag message.user.thumbnail
-        %button.btn__channel
+        - else
+          %button.btn__channel
   .message-main-content
     .message-user-name
       .user-nickname
