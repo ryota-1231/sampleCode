@@ -5,6 +5,7 @@ document.addEventListener('turbolinks:load', () => {
 
     // js.erb 内で使用できるように変数を定義しておく
     window.messageContainer = document.getElementById('container__contents')
+    var content = document.getElementById('container__contents')
 
     // 以下のプログラムが他のページで動作しないようにしておく
     if (messageContainer === null) {
@@ -28,8 +29,12 @@ document.addEventListener('turbolinks:load', () => {
     // js.erb 内でも使用できるように変数を決定
     window.messageContent = document.getElementById('message_message')
     // 一番下まで移動する関数。js.erb 内でも使用できるように変数を決定
+
+    var element = content;
+    var bottom = element.scrollHeight - element.clientHeight;
+
     window.scrollToBottom = () => {
-        window.scroll(0, documentElement.scrollHeight)
+        element.scroll(0, bottom);
     }
 
     // 最初にページ一番下へ移動させる
@@ -41,10 +46,8 @@ document.addEventListener('turbolinks:load', () => {
     const button_activation = () => {
         if (messageContent.value === '') {
             messageButton.classList.add('disabled')
-            console.log('hoge')
         } else {
             messageButton.classList.remove('disabled')
-            console.log('fog')
         }
     }
 
@@ -93,9 +96,9 @@ document.addEventListener('turbolinks:load', () => {
         // 行数が増える時と減る時で操作順を変更しないとうまくいかない
         if (footerHeightDiff > 0) {
             messageContainer.style.paddingBottom = newFooterHeight + 'px'
-            window.scrollBy(0, footerHeightDiff)
+            element.scrollBy(0, footerHeightDiff)
         } else {
-            window.scrollBy(0, footerHeightDiff)
+            element.scrollBy(0, footerHeightDiff)
             messageContainer.style.paddingBottom = newFooterHeight + 'px'
         }
         footerHeight = newFooterHeight
@@ -105,15 +108,12 @@ document.addEventListener('turbolinks:load', () => {
     // メッセージの追加読み込みの可否を決定する変数
     window.showAdditionally = true
 
-    window.addEventListener('scroll', () => {
-      console.log('hoge')
-
+    content.addEventListener('scroll', () => {
         if (documentElement.scrollTop === 0 && showAdditionally) {
             showAdditionally = false
             // 表示済みのメッセージの内，最も古いidを取得
             oldestMessageId = document.getElementsByClassName('message')[0].id.replace(/[^0-9]/g, '')
             // Ajax を利用してメッセージの追加読み込みリクエストを送る。最も古いメッセージidも送信しておく。
-            console.log(oldestMessageId)
             $.ajax({
                 type: 'GET',
                 url: '/show_additionally',

@@ -1,8 +1,10 @@
 var messageHeight = messageContainer.scrollHeight
-
+console.log(messageHeight)
 messageContainer.insertAdjacentHTML('afterbegin', "<%= j(render @messages) %>")
 var newMessageHeight = messageContainer.scrollHeight
-window.scrollBy(0, newMessageHeight - messageHeight)
+console.log(newMessageHeight)
+messageContainer.scrollBy(0, newMessageHeight - messageHeight)
+console.log(messageContainer)
 
 <% if @messages.present? %>
     showAdditionally = true
