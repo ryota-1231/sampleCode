@@ -14,6 +14,7 @@ document.addEventListener('turbolinks:load', () => {
 
     consumer.subscriptions.create("RoomChannel", {
         connected() {
+            // console.log('test')
         },
 
         disconnected() {
@@ -22,6 +23,7 @@ document.addEventListener('turbolinks:load', () => {
         received(data) {
             // サーバー側から受け取ったHTMLを一番最後に加える
             messageContainer.insertAdjacentHTML('beforeend', data['message'])
+            console.log(data['message'])
         }
     })
 

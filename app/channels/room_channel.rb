@@ -1,7 +1,7 @@
 class RoomChannel < ApplicationCable::Channel
   def subscribed
-    # stream_from "some_channel"
     stream_from "room_channel"
+    # 5.times { puts '***test***' }
   end
 
   def unsubscribed
