@@ -4,7 +4,6 @@
       .button__area__top
         - if message.user.avatar.present?
           = image_tag message.user.thumbnail
-          = binding.pry
         - else
           %button.btn__channel
   .message-main-content
