@@ -6,6 +6,8 @@ class User < ApplicationRecord
          
   has_one_attached :avatar  
   has_many :messages, dependent: :destroy
+  has_many :channels_users
+  has_many :channels, through: :channels_users
 
   def thumbnail
     return self.avatar.variant(resize: '50x50')

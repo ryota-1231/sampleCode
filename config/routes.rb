@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root 'rooms#index'
   # 次の一行を追加
   resources :messages, only: :create
+  resources :channels, only: [:create, :new, :show]
   get '/show_additionally', to: 'rooms#show_additionally'
 
 end
