@@ -6,6 +6,7 @@ class ChannelsController < ApplicationController
 
   def create
     @channels = Channel.new(channel_params)
+    @channels.users << current_user
     if @channels.save
       redirect_to :root
     else
@@ -19,6 +20,6 @@ class ChannelsController < ApplicationController
 
   private
   def channel_params
-    params.permit
+    params.require(:channel).permit(:name)  
   end
 end
