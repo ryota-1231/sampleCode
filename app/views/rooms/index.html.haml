@@ -42,12 +42,14 @@
               %i.fa.fa-ellipsis-v
             %h3 App
         .channel-area
-          .channel-area__title
-            %h3 チャンネル
-            %i.fa.fa-plus-circle
+          = link_to new_channel_path do
+            .channel-area__title
+              %h3 チャンネル
+              %i.fa.fa-plus-circle
           .channel-area__contents
-            %h3 # あいさつ部屋
-            %h3 # アウトプット部屋
+            - if current_user.channels_users.present?
+              - current_user.channels_users.each do |channel|
+                %h3=channel.channel.name
           .channel-area__add
             %h3 + チャンネルを追加する
         .direct-area

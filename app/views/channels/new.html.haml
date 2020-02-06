@@ -1,0 +1,12 @@
+.channel__wrapper
+  .header
+    .header__left
+      =link_to "", "/"
+  .main-contaner
+    .contaner__table
+      %h2 チャンネルを作成する
+      = form_with model: @channels do |form|
+        = form.text_area :channel, name: "channel[name]"
+        = form.submit '送信'
+      
+  
