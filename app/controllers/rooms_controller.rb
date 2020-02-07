@@ -4,7 +4,6 @@ class RoomsController < ApplicationController
   def index
     @messages = Message.includes(:user).order(:id).last(100)
     @message = current_user.messages.build
-    @channels = Channel.find(current_user.id)
   end
 
   def show
