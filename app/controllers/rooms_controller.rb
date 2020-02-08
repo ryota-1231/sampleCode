@@ -4,11 +4,12 @@ class RoomsController < ApplicationController
   def index
     @messages = Message.includes(:user).order(:id).last(100)
     @message = current_user.messages.build
+    @channel = current_user.channels
   end
 
   def show
     # 投稿一覧表示に利用
-    @messages = Message.includes(:user).order(:id)
+    @messages = Message.includes(:user).order(:id).last(50)
     # メッセージ投稿に利用
     @message = current_user.messages.build
   end

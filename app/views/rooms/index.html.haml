@@ -42,16 +42,17 @@
               %i.fa.fa-ellipsis-v
             %h3 App
         .channel-area
-          = link_to new_channel_path do
-            .channel-area__title
-              %h3 チャンネル
+          .channel-area__title
+            %h3 チャンネル
+            = link_to new_channel_path do
               %i.fa.fa-plus-circle
           .channel-area__contents
             - if current_user.channels_users.present?
               - current_user.channels_users.each do |channel|
                 %h3=channel.channel.name
           .channel-area__add
-            %h3 + チャンネルを追加する
+            = link_to new_channel_path do
+              %h3 + チャンネルを追加する
         .direct-area
           .direct-area__title
             %h3 ダイレクトメッセージ
@@ -71,7 +72,6 @@
             %h3 + Google Calendarをインストールする
             %h3 + Google Driveをインストールする
             %h3 + アプリを追加する
-
   .main-cotainer
     .container__header
       .container__header__wrapper
@@ -103,17 +103,9 @@
               %i.fa.fa-at.icon
               %i.fa.fa-star.icon
               %i.fa.fa-ellipsis-v.icon
-            
     #container__contents
       = render @messages
-      -# - @messages.each do|message|
-      -#   .content__message
-      -#     = message.message
     = render 'footer'
-    -# .container__bottom
-    -#   = form_with model: @message do |f|
-    -#     = f.text_field :message
-    -#     = f.submit '送信', class: 'btn btn-primary btn-block submit disabled', id: 'message-button'
 
 = render 'user_popup'
 = javascript_pack_tag 'user_popup'
