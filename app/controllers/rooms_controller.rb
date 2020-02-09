@@ -12,6 +12,7 @@ class RoomsController < ApplicationController
     @messages = Message.includes(:user).order(:id).last(50)
     # メッセージ投稿に利用
     @message = current_user.messages.build
+    # @messe= Message.find(params[:id])
   end
 
   def delete
