@@ -124,4 +124,12 @@ document.addEventListener('turbolinks:load', () => {
             })
         }
     }, {passive: true});
+
+    $(".users_channel").on('click', function(){
+        console.log('hoge');
+    })
+
+
+
+
 })
